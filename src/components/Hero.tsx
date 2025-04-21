@@ -20,20 +20,13 @@ const Hero = () => {
               Профессиональный ремонт квартир, домов и офисов под ключ. 
               От косметического до капитального.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div>
               <Button 
                 onClick={scrollToForm}
                 size="lg" 
                 className="bg-white text-blue-700 hover:bg-blue-50"
               >
                 Оставить заявку
-              </Button>
-              <Button 
-                variant="outline" 
-                size="lg" 
-                className="border-white text-white hover:bg-white/10"
-              >
-                Наши работы
               </Button>
             </div>
           </div>
