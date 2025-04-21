@@ -49,9 +49,9 @@ const Header = () => {
           </nav>
 
           <div className="hidden md:flex items-center">
-            <a href="tel:+79271234567" className="flex items-center text-gray-800 hover:text-blue-600 mr-4">
+            <a href="tel:+79654538184" className="flex items-center text-gray-800 hover:text-blue-600 mr-4">
               <Phone size={18} className="mr-2" />
-              <span>+7 927 123-45-67</span>
+              <span>+7 965 453 8184</span>
             </a>
             <Button 
               onClick={() => scrollToSection("contact-form")}
@@ -94,11 +94,11 @@ const Header = () => {
               Контакты
             </button>
             <a 
-              href="tel:+79271234567" 
+              href="tel:+79654538184" 
               className="flex items-center px-3 py-2 text-gray-700 hover:bg-blue-50 rounded-md"
             >
               <Phone size={18} className="mr-2" />
-              <span>+7 927 123-45-67</span>
+              <span>+7 965 453 8184</span>
             </a>
           </div>
         </div>
