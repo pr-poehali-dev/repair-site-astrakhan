@@ -35,8 +35,8 @@ const Hero = () => {
             <div className="absolute -bottom-4 -right-4 w-full h-full bg-blue-900 rounded-lg"></div>
             <div className="relative rounded-lg overflow-hidden">
               <img 
-                src="https://cdn.poehali.dev/files/6e3bfe22-f1c2-4f65-ad86-18d0e4ba6e63.png" 
-                alt="Ремонт квартиры - современная комната с серыми стенами и качественной отделкой" 
+                src="https://images.unsplash.com/photo-1565538810643-b5bdb714032a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                alt="Современная отремонтированная светлая комната с дизайнерской отделкой" 
                 className="w-full h-[400px] object-cover rounded-lg"
               />
             </div>
