@@ -42,8 +42,8 @@ const Hero = () => {
             <div className="absolute -bottom-4 -right-4 w-full h-full bg-blue-900 rounded-lg"></div>
             <div className="relative rounded-lg overflow-hidden">
               <img 
-                src="/placeholder.svg" 
-                alt="Ремонт квартир в Астрахани" 
+                src="https://cdn.poehali.dev/files/6e3bfe22-f1c2-4f65-ad86-18d0e4ba6e63.png" 
+                alt="Ремонт квартиры - современная комната с серыми стенами и качественной отделкой" 
                 className="w-full h-[400px] object-cover rounded-lg"
               />
             </div>
