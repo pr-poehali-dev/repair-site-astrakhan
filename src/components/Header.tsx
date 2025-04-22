@@ -23,7 +23,7 @@ const Header = () => {
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
             <a href="/" className="flex items-center">
-              <span className="text-xl font-bold text-blue-600">РемонтАстрахань</span>
+              <span className="text-xl font-bold text-blue-600">ЭлектромонтажАстрахань</span>
             </a>
           </div>
 
@@ -39,6 +39,12 @@ const Header = () => {
               className="text-gray-700 hover:text-blue-600 transition-colors"
             >
               Услуги
+            </button>
+            <button 
+              onClick={() => scrollToSection("calculator")}
+              className="text-gray-700 hover:text-blue-600 transition-colors"
+            >
+              Калькулятор
             </button>
             <button 
               onClick={() => scrollToSection("contact-form")}
@@ -86,6 +92,12 @@ const Header = () => {
               className="block w-full text-left px-3 py-2 text-gray-700 hover:bg-blue-50 rounded-md"
             >
               Услуги
+            </button>
+            <button
+              onClick={() => scrollToSection("calculator")}
+              className="block w-full text-left px-3 py-2 text-gray-700 hover:bg-blue-50 rounded-md"
+            >
+              Калькулятор
             </button>
             <button
               onClick={() => scrollToSection("contact-form")}

@@ -1,25 +1,6 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
 const Services = () => {
-  const services = [
-    {
-      title: "Косметический ремонт",
-      description: "Быстрое обновление интерьера без серьезных перепланировок",
-      features: ["Покраска стен", "Поклейка обоев", "Замена напольных покрытий", "Обновление сантехники"]
-    },
-    {
-      title: "Капитальный ремонт",
-      description: "Полное обновление квартиры с заменой коммуникаций",
-      features: ["Перепланировка помещений", "Замена электропроводки", "Замена сантехнических труб", "Выравнивание стен и потолков"]
-    },
-    {
-      title: "Ремонт под ключ",
-      description: "Полный комплекс работ от проекта до финальной уборки",
-      features: ["Разработка дизайн-проекта", "Закупка материалов", "Все виды отделочных работ", "Финальная уборка"]
-    }
-  ];
-
   const scrollToForm = () => {
     const formElement = document.getElementById("contact-form");
     if (formElement) {
@@ -31,38 +12,126 @@ const Services = () => {
     <section className="py-16 px-4 bg-white" id="services">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4">Наши услуги</h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Мы предлагаем полный спектр услуг по ремонту квартир, домов и офисов в Астрахани
+          <h2 className="text-3xl font-bold mb-3">Наши услуги</h2>
+          <p className="text-gray-600 max-w-2xl mx-auto">
+            Выполняем полный комплекс электромонтажных работ для жилых и коммерческих помещений
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {services.map((service, index) => (
-            <Card key={index} className="hover:shadow-lg transition-shadow">
-              <CardHeader className="pb-2">
-                <CardTitle>{service.title}</CardTitle>
-                <CardDescription>{service.description}</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-2 mb-6">
-                  {service.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-start">
-                      <span className="text-blue-600 mr-2">✓</span>
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-                <Button 
-                  onClick={scrollToForm} 
-                  variant="outline" 
-                  className="w-full"
-                >
-                  Узнать стоимость
-                </Button>
-              </CardContent>
-            </Card>
-          ))}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="bg-gray-50 rounded-lg overflow-hidden shadow-md transition-all hover:shadow-lg">
+            <div className="h-48 overflow-hidden">
+              <img 
+                src="https://images.unsplash.com/photo-1586864387789-628af9feed72?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+                alt="Замена электропроводки" 
+                className="w-full h-full object-cover transition-transform hover:scale-105"
+              />
+            </div>
+            <div className="p-6">
+              <h3 className="text-xl font-semibold mb-2">Замена электропроводки</h3>
+              <p className="text-gray-600 mb-4">
+                Полная или частичная замена старой проводки с соблюдением всех норм безопасности
+              </p>
+              <Button variant="outline" onClick={scrollToForm} className="w-full">
+                Заказать услугу
+              </Button>
+            </div>
+          </div>
+          
+          <div className="bg-gray-50 rounded-lg overflow-hidden shadow-md transition-all hover:shadow-lg">
+            <div className="h-48 overflow-hidden">
+              <img 
+                src="https://images.unsplash.com/photo-1543674892-7d64d45facca?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+                alt="Установка розеток и выключателей" 
+                className="w-full h-full object-cover transition-transform hover:scale-105"
+              />
+            </div>
+            <div className="p-6">
+              <h3 className="text-xl font-semibold mb-2">Установка розеток и выключателей</h3>
+              <p className="text-gray-600 mb-4">
+                Монтаж, замена и перенос розеток, выключателей и других электроточек
+              </p>
+              <Button variant="outline" onClick={scrollToForm} className="w-full">
+                Заказать услугу
+              </Button>
+            </div>
+          </div>
+          
+          <div className="bg-gray-50 rounded-lg overflow-hidden shadow-md transition-all hover:shadow-lg">
+            <div className="h-48 overflow-hidden">
+              <img 
+                src="https://images.unsplash.com/photo-1574969000748-c0276371bed7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+                alt="Монтаж электрощитов" 
+                className="w-full h-full object-cover transition-transform hover:scale-105"
+              />
+            </div>
+            <div className="p-6">
+              <h3 className="text-xl font-semibold mb-2">Монтаж электрощитов</h3>
+              <p className="text-gray-600 mb-4">
+                Сборка, установка и подключение электрощитов любой сложности
+              </p>
+              <Button variant="outline" onClick={scrollToForm} className="w-full">
+                Заказать услугу
+              </Button>
+            </div>
+          </div>
+          
+          <div className="bg-gray-50 rounded-lg overflow-hidden shadow-md transition-all hover:shadow-lg">
+            <div className="h-48 overflow-hidden">
+              <img 
+                src="https://images.unsplash.com/photo-1613195395535-5dc035ef65e5?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+                alt="Монтаж освещения" 
+                className="w-full h-full object-cover transition-transform hover:scale-105"
+              />
+            </div>
+            <div className="p-6">
+              <h3 className="text-xl font-semibold mb-2">Монтаж освещения</h3>
+              <p className="text-gray-600 mb-4">
+                Установка светильников, люстр, подсветки и декоративного освещения
+              </p>
+              <Button variant="outline" onClick={scrollToForm} className="w-full">
+                Заказать услугу
+              </Button>
+            </div>
+          </div>
+          
+          <div className="bg-gray-50 rounded-lg overflow-hidden shadow-md transition-all hover:shadow-lg">
+            <div className="h-48 overflow-hidden">
+              <img 
+                src="https://images.unsplash.com/photo-1558389158-d469a3c41392?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+                alt="Электромонтаж в новостройке" 
+                className="w-full h-full object-cover transition-transform hover:scale-105"
+              />
+            </div>
+            <div className="p-6">
+              <h3 className="text-xl font-semibold mb-2">Электромонтаж в новостройке</h3>
+              <p className="text-gray-600 mb-4">
+                Полный комплекс работ по электрификации новых помещений под ключ
+              </p>
+              <Button variant="outline" onClick={scrollToForm} className="w-full">
+                Заказать услугу
+              </Button>
+            </div>
+          </div>
+          
+          <div className="bg-gray-50 rounded-lg overflow-hidden shadow-md transition-all hover:shadow-lg">
+            <div className="h-48 overflow-hidden">
+              <img 
+                src="https://images.unsplash.com/photo-1601933513793-abd37b4805e7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+                alt="Устранение неисправностей" 
+                className="w-full h-full object-cover transition-transform hover:scale-105"
+              />
+            </div>
+            <div className="p-6">
+              <h3 className="text-xl font-semibold mb-2">Устранение неисправностей</h3>
+              <p className="text-gray-600 mb-4">
+                Диагностика и ремонт неисправностей в электросети, поиск замыканий
+              </p>
+              <Button variant="outline" onClick={scrollToForm} className="w-full">
+                Заказать услугу
+              </Button>
+            </div>
+          </div>
         </div>
       </div>
     </section>

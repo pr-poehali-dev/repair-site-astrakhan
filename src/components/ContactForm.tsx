@@ -10,7 +10,6 @@ import { toast } from "@/components/ui/use-toast";
 const formSchema = z.object({
   name: z.string().min(2, { message: "Имя должно содержать минимум 2 символа" }),
   phone: z.string().min(10, { message: "Введите корректный номер телефона" }),
-  address: z.string().min(5, { message: "Адрес должен содержать минимум 5 символов" }),
   message: z.string().optional(),
 });
 
@@ -22,7 +21,6 @@ const ContactForm = () => {
     defaultValues: {
       name: "",
       phone: "",
-      address: "",
       message: "",
     },
   });
@@ -105,20 +103,6 @@ const ContactForm = () => {
                       <FormLabel>Номер телефона</FormLabel>
                       <FormControl>
                         <Input placeholder="+7 (___) ___-__-__" {...field} />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                
-                <FormField
-                  control={form.control}
-                  name="address"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Адрес объекта</FormLabel>
-                      <FormControl>
-                        <Input placeholder="г. Астрахань, ул. ..." {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
