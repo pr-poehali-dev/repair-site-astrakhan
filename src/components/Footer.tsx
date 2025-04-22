@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="max-w-6xl mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <h3 className="text-xl font-bold mb-4">ЭлектромонтажАстрахань</h3>
+            <h3 className="text-xl font-bold mb-4">Электромонтаж</h3>
             <p className="text-gray-400 mb-4">
               Профессиональные электромонтажные работы в Астрахани с гарантией качества и безопасности
             </p>
@@ -54,7 +54,7 @@ const Footer = () => {
         
         <div className="border-t border-gray-800 mt-8 pt-6">
           <p className="text-gray-500 text-sm text-center">
-            © {new Date().getFullYear()} ЭлектромонтажАстрахань. Все права защищены.
+            © {new Date().getFullYear()} Электромонтаж. Все права защищены.
           </p>
         </div>
       </div>
