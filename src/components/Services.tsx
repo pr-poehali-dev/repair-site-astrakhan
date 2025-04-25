@@ -22,7 +22,7 @@ const Services = () => {
           <div className="bg-gray-50 rounded-lg overflow-hidden shadow-md transition-all hover:shadow-lg">
             <div className="h-48 overflow-hidden">
               <img 
-                src="https://images.unsplash.com/photo-1586864387789-628af9feed72?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+                src="https://images.unsplash.com/photo-1582731595896-1fcad083df15?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
                 alt="Замена электропроводки" 
                 className="w-full h-full object-cover transition-transform hover:scale-105"
               />
@@ -41,7 +41,7 @@ const Services = () => {
           <div className="bg-gray-50 rounded-lg overflow-hidden shadow-md transition-all hover:shadow-lg">
             <div className="h-48 overflow-hidden">
               <img 
-                src="https://images.unsplash.com/photo-1543674892-7d64d45facca?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+                src="https://images.unsplash.com/photo-1558389186-a6d803b64fb4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
                 alt="Установка розеток и выключателей" 
                 className="w-full h-full object-cover transition-transform hover:scale-105"
               />
@@ -60,7 +60,7 @@ const Services = () => {
           <div className="bg-gray-50 rounded-lg overflow-hidden shadow-md transition-all hover:shadow-lg">
             <div className="h-48 overflow-hidden">
               <img 
-                src="https://images.unsplash.com/photo-1574969000748-c0276371bed7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+                src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
                 alt="Монтаж электрощитов" 
                 className="w-full h-full object-cover transition-transform hover:scale-105"
               />
@@ -79,7 +79,7 @@ const Services = () => {
           <div className="bg-gray-50 rounded-lg overflow-hidden shadow-md transition-all hover:shadow-lg">
             <div className="h-48 overflow-hidden">
               <img 
-                src="https://images.unsplash.com/photo-1613195395535-5dc035ef65e5?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+                src="https://images.unsplash.com/photo-1565347878134-020b568aee26?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
                 alt="Монтаж освещения" 
                 className="w-full h-full object-cover transition-transform hover:scale-105"
               />
@@ -98,7 +98,7 @@ const Services = () => {
           <div className="bg-gray-50 rounded-lg overflow-hidden shadow-md transition-all hover:shadow-lg">
             <div className="h-48 overflow-hidden">
               <img 
-                src="https://images.unsplash.com/photo-1558389158-d469a3c41392?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+                src="https://images.unsplash.com/photo-1583089892943-c13be20f9fd7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
                 alt="Электромонтаж в новостройке" 
                 className="w-full h-full object-cover transition-transform hover:scale-105"
               />
@@ -117,7 +117,7 @@ const Services = () => {
           <div className="bg-gray-50 rounded-lg overflow-hidden shadow-md transition-all hover:shadow-lg">
             <div className="h-48 overflow-hidden">
               <img 
-                src="https://images.unsplash.com/photo-1601933513793-abd37b4805e7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+                src="https://images.unsplash.com/photo-1541364983171-a8ba01e95cfc?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
                 alt="Устранение неисправностей" 
                 className="w-full h-full object-cover transition-transform hover:scale-105"
               />
