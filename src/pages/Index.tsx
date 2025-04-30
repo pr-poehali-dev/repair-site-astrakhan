@@ -7,12 +7,12 @@ import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-background text-foreground">
       <Header />
       <main className="flex-grow">
         <Hero />
-        <Benefits />
         <Services />
+        <Benefits />
         <ContactForm />
       </main>
       <Footer />

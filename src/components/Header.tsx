@@ -1,9 +1,19 @@
-import { useState } from "react";
-import { Phone, Menu, X } from "lucide-react";
+import { useState, useEffect } from "react";
+import { Phone, Menu, X, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 10);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -18,98 +28,105 @@ const Header = () => {
   };
 
   return (
-    <header className="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50">
-      <div className="max-w-6xl mx-auto px-4 py-4">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
-              </svg>
+    <header 
+      className={`sticky top-0 z-50 transition-all duration-300 ${
+        scrolled 
+          ? "bg-white/90 shadow-md backdrop-blur-md dark:bg-background/90" 
+          : "bg-transparent"
+      }`}
+    >
+      <div className="container-custom">
+        <div className="flex h-20 items-center justify-between">
+          <div className="flex items-center gap-3">
+            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-electric-500 text-white">
+              <Zap size={20} className="stroke-[2.5px]" />
             </div>
-            <h1 className="text-xl font-display font-bold text-gray-900">Электромонтаж</h1>
+            <h1 className="font-display text-xl font-bold">ЭлектроПро</h1>
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
-            <a 
-              onClick={() => scrollToSection("benefits")} 
-              className="text-gray-700 hover:text-primary font-medium transition-colors duration-200 cursor-pointer"
-            >
-              Преимущества
-            </a>
-            <a 
+          <nav className="hidden items-center space-x-8 md:flex">
+            <button 
               onClick={() => scrollToSection("services")} 
-              className="text-gray-700 hover:text-primary font-medium transition-colors duration-200 cursor-pointer"
+              className="text-base font-medium text-foreground/80 transition-colors hover:text-electric-600"
             >
               Услуги
-            </a>
-            <a 
+            </button>
+            <button 
+              onClick={() => scrollToSection("benefits")} 
+              className="text-base font-medium text-foreground/80 transition-colors hover:text-electric-600"
+            >
+              Преимущества
+            </button>
+            <button 
               onClick={() => scrollToSection("contact-form")} 
-              className="text-gray-700 hover:text-primary font-medium transition-colors duration-200 cursor-pointer"
+              className="text-base font-medium text-foreground/80 transition-colors hover:text-electric-600"
             >
               Контакты
-            </a>
+            </button>
           </nav>
 
           {/* Contact Button */}
-          <div className="hidden md:flex items-center space-x-2">
-            <Phone size={18} className="text-primary" />
-            <span className="font-medium">+7 965 453 8184</span>
+          <div className="hidden items-center space-x-6 md:flex">
+            <div className="flex items-center gap-2">
+              <Phone size={18} className="text-electric-600" />
+              <span className="font-medium">+7 923 456 7890</span>
+            </div>
             <Button 
               variant="default" 
-              className="ml-4 shadow-md"
+              className="shadow-md"
               onClick={() => scrollToSection("contact-form")}
             >
-              Заказать звонок
+              Оставить заявку
             </Button>
           </div>
 
           {/* Mobile Menu Button */}
           <button 
-            className="md:hidden focus:outline-none"
+            className="focus:outline-none md:hidden"
             onClick={toggleMenu}
+            aria-label="Меню навигации"
           >
             {isMenuOpen ? (
-              <X className="h-6 w-6 text-gray-600" />
+              <X className="h-6 w-6 text-foreground" />
             ) : (
-              <Menu className="h-6 w-6 text-gray-600" />
+              <Menu className="h-6 w-6 text-foreground" />
             )}
           </button>
         </div>
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden mt-4 py-4 border-t border-gray-100">
-            <nav className="flex flex-col space-y-4">
-              <a 
-                onClick={() => scrollToSection("benefits")} 
-                className="text-gray-700 hover:text-primary cursor-pointer"
-              >
-                Преимущества
-              </a>
-              <a 
+          <div className="animate-fade-in md:hidden">
+            <nav className="flex flex-col space-y-4 border-t py-6">
+              <button 
                 onClick={() => scrollToSection("services")} 
-                className="text-gray-700 hover:text-primary cursor-pointer"
+                className="py-2 text-foreground/80 hover:text-electric-600"
               >
                 Услуги
-              </a>
-              <a 
+              </button>
+              <button 
+                onClick={() => scrollToSection("benefits")} 
+                className="py-2 text-foreground/80 hover:text-electric-600"
+              >
+                Преимущества
+              </button>
+              <button 
                 onClick={() => scrollToSection("contact-form")} 
-                className="text-gray-700 hover:text-primary cursor-pointer"
+                className="py-2 text-foreground/80 hover:text-electric-600"
               >
                 Контакты
-              </a>
+              </button>
               <div className="flex items-center space-x-2 pt-2">
-                <Phone size={18} className="text-primary" />
-                <span className="font-medium">+7 965 453 8184</span>
+                <Phone size={18} className="text-electric-600" />
+                <span className="font-medium">+7 923 456 7890</span>
               </div>
               <Button 
                 variant="default" 
-                className="w-full"
+                className="mt-2 w-full"
                 onClick={() => scrollToSection("contact-form")}
               >
-                Заказать звонок
+                Оставить заявку
               </Button>
             </nav>
           </div>
