@@ -1,87 +1,83 @@
-import { Phone, Mail, MapPin, Zap, Facebook, Instagram, Twitter } from "lucide-react";
 
-const Footer = () => {
+import { Zap, Facebook, Instagram, Twitter, Mail, Phone } from "lucide-react";
+
+export default function Footer() {
   const currentYear = new Date().getFullYear();
   
   return (
-    <footer className="bg-electric-950 pt-16 text-white">
+    <footer className="bg-gray-900 text-white pt-16 pb-6">
       <div className="container-custom">
-        <div className="mb-12 grid gap-10 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           <div>
-            <div className="mb-6 flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-electric-500 text-white">
-                <Zap size={20} className="stroke-[2.5px]" />
+            <div className="flex items-center space-x-2 mb-6">
+              <div className="flex items-center justify-center w-10 h-10 rounded-md bg-primary text-white">
+                <Zap size={20} strokeWidth={2.5} />
               </div>
-              <h2 className="font-display text-xl font-bold">ЭлектроПро</h2>
+              <span className="text-xl font-heading font-bold">ЭлектроМастер</span>
             </div>
-            <p className="mb-6 text-white/70">
-              Профессиональные электромонтажные работы любой сложности. 
-              Гарантируем безопасность, качество и надежность на долгие годы.
+            <p className="text-gray-400 mb-6">
+              Профессиональные электромонтажные работы любой сложности.
+              Безопасно, качественно, с гарантией.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white hover:bg-electric-500">
+              <a href="#" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors">
                 <Facebook size={18} />
               </a>
-              <a href="#" className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white hover:bg-electric-500">
+              <a href="#" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors">
                 <Instagram size={18} />
               </a>
-              <a href="#" className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white hover:bg-electric-500">
+              <a href="#" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors">
                 <Twitter size={18} />
               </a>
             </div>
           </div>
           
           <div>
-            <h3 className="mb-6 font-display text-lg font-semibold">Услуги</h3>
-            <ul className="space-y-3 text-white/70">
-              <li className="transition-colors hover:text-electric-400">Монтаж электропроводки</li>
-              <li className="transition-colors hover:text-electric-400">Установка электрощитов</li>
-              <li className="transition-colors hover:text-electric-400">Монтаж освещения</li>
-              <li className="transition-colors hover:text-electric-400">Установка розеток</li>
-              <li className="transition-colors hover:text-electric-400">Умный дом</li>
-              <li className="transition-colors hover:text-electric-400">Аварийные вызовы</li>
+            <h3 className="text-lg font-bold mb-6">Услуги</h3>
+            <ul className="space-y-3 text-gray-400">
+              <li className="hover:text-primary transition-colors">Монтаж электропроводки</li>
+              <li className="hover:text-primary transition-colors">Установка электрощитов</li>
+              <li className="hover:text-primary transition-colors">Системы освещения</li>
+              <li className="hover:text-primary transition-colors">Установка розеток и выключателей</li>
+              <li className="hover:text-primary transition-colors">Умный дом</li>
+              <li className="hover:text-primary transition-colors">Срочный ремонт</li>
             </ul>
           </div>
           
           <div>
-            <h3 className="mb-6 font-display text-lg font-semibold">Полезные ссылки</h3>
-            <ul className="space-y-3 text-white/70">
-              <li className="transition-colors hover:text-electric-400">О компании</li>
-              <li className="transition-colors hover:text-electric-400">Наши преимущества</li>
-              <li className="transition-colors hover:text-electric-400">Услуги</li>
-              <li className="transition-colors hover:text-electric-400">Портфолио</li>
-              <li className="transition-colors hover:text-electric-400">Отзывы</li>
-              <li className="transition-colors hover:text-electric-400">Контакты</li>
+            <h3 className="text-lg font-bold mb-6">Компания</h3>
+            <ul className="space-y-3 text-gray-400">
+              <li className="hover:text-primary transition-colors">О нас</li>
+              <li className="hover:text-primary transition-colors">Наши работы</li>
+              <li className="hover:text-primary transition-colors">Отзывы</li>
+              <li className="hover:text-primary transition-colors">Цены</li>
+              <li className="hover:text-primary transition-colors">Акции</li>
+              <li className="hover:text-primary transition-colors">Блог</li>
             </ul>
           </div>
           
           <div>
-            <h3 className="mb-6 font-display text-lg font-semibold">Контакты</h3>
+            <h3 className="text-lg font-bold mb-6">Контакты</h3>
             <ul className="space-y-4">
-              <li className="flex items-start gap-3">
-                <Phone size={18} className="mt-1 text-electric-400" />
-                <span className="text-white/70">+7 923 456 7890</span>
+              <li className="flex items-center gap-3 text-gray-400">
+                <Phone size={18} className="text-primary" />
+                <span>+7 800 555 3535</span>
               </li>
-              <li className="flex items-start gap-3">
-                <Mail size={18} className="mt-1 text-electric-400" />
-                <span className="text-white/70">electro-pro@example.com</span>
+              <li className="flex items-center gap-3 text-gray-400">
+                <Mail size={18} className="text-primary" />
+                <span>info@electromaster.ru</span>
               </li>
-              <li className="flex items-start gap-3">
-                <MapPin size={18} className="mt-1 text-electric-400" />
-                <span className="text-white/70">
-                  Работаем во всех районах города и области
-                </span>
+              <li className="text-gray-400">
+                Работаем ежедневно с 9:00 до 20:00 без выходных
               </li>
             </ul>
           </div>
         </div>
         
-        <div className="border-t border-white/10 py-6 text-center text-sm text-white/50">
-          <p>© {currentYear} ЭлектроПро. Все права защищены.</p>
+        <div className="pt-6 border-t border-gray-800 text-center text-gray-500 text-sm">
+          <p>© {currentYear} ЭлектроМастер. Все права защищены.</p>
         </div>
       </div>
     </footer>
   );
-};
-
-export default Footer;
+}

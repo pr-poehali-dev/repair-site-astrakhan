@@ -1,132 +1,140 @@
-import { useState, useEffect } from "react";
-import { Phone, Menu, X, Zap } from "lucide-react";
-import { Button } from "@/components/ui/button";
 
-const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+import { useState, useEffect } from "react";
+import { Button } from "@/components/ui/button";
+import { Zap, Menu, X, Phone } from "lucide-react";
+
+export default function Header() {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 10);
+      setIsScrolled(window.scrollY > 20);
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
-  const scrollToSection = (sectionId: string) => {
-    const section = document.getElementById(sectionId);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-      setIsMenuOpen(false);
+  const scrollToSection = (id: string) => {
+    setIsMobileMenuOpen(false);
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
     }
   };
 
   return (
     <header 
-      className={`sticky top-0 z-50 transition-all duration-300 ${
-        scrolled 
-          ? "bg-white/90 shadow-md backdrop-blur-md dark:bg-background/90" 
+      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+        isScrolled 
+          ? "bg-white/95 shadow-md backdrop-blur-sm dark:bg-gray-900/95" 
           : "bg-transparent"
       }`}
     >
       <div className="container-custom">
-        <div className="flex h-20 items-center justify-between">
-          <div className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-electric-500 text-white">
-              <Zap size={20} className="stroke-[2.5px]" />
+        <div className="flex items-center justify-between h-20">
+          {/* Logo */}
+          <div className="flex items-center space-x-2">
+            <div className="flex items-center justify-center w-10 h-10 rounded-md bg-primary text-white">
+              <Zap size={20} strokeWidth={2.5} />
             </div>
-            <h1 className="font-display text-xl font-bold">ЭлектроПро</h1>
+            <span className="text-xl font-heading font-bold">ЭлектроМастер</span>
           </div>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden items-center space-x-8 md:flex">
+          {/* Desktop Nav */}
+          <nav className="hidden md:flex items-center space-x-8">
             <button 
-              onClick={() => scrollToSection("services")} 
-              className="text-base font-medium text-foreground/80 transition-colors hover:text-electric-600"
+              onClick={() => scrollToSection("services")}
+              className="text-base font-medium text-gray-700 hover:text-primary transition-colors dark:text-gray-200"
             >
               Услуги
             </button>
             <button 
-              onClick={() => scrollToSection("benefits")} 
-              className="text-base font-medium text-foreground/80 transition-colors hover:text-electric-600"
+              onClick={() => scrollToSection("about")}
+              className="text-base font-medium text-gray-700 hover:text-primary transition-colors dark:text-gray-200"
             >
-              Преимущества
+              О нас
             </button>
             <button 
-              onClick={() => scrollToSection("contact-form")} 
-              className="text-base font-medium text-foreground/80 transition-colors hover:text-electric-600"
+              onClick={() => scrollToSection("work")}
+              className="text-base font-medium text-gray-700 hover:text-primary transition-colors dark:text-gray-200"
+            >
+              Наши работы
+            </button>
+            <button 
+              onClick={() => scrollToSection("contact")}
+              className="text-base font-medium text-gray-700 hover:text-primary transition-colors dark:text-gray-200"
             >
               Контакты
             </button>
           </nav>
 
-          {/* Contact Button */}
-          <div className="hidden items-center space-x-6 md:flex">
-            <div className="flex items-center gap-2">
-              <Phone size={18} className="text-electric-600" />
-              <span className="font-medium">+7 923 456 7890</span>
+          {/* CTA Button & Phone */}
+          <div className="hidden md:flex items-center space-x-6">
+            <div className="flex items-center gap-2 text-gray-700 dark:text-gray-200">
+              <Phone size={18} className="text-primary" />
+              <span className="font-medium">+7 800 555 3535</span>
             </div>
             <Button 
-              variant="default" 
-              className="shadow-md"
-              onClick={() => scrollToSection("contact-form")}
+              onClick={() => scrollToSection("contact")}
+              className="bg-primary hover:bg-primary/90 text-white"
             >
-              Оставить заявку
+              Заказать звонок
             </Button>
           </div>
 
           {/* Mobile Menu Button */}
           <button 
-            className="focus:outline-none md:hidden"
-            onClick={toggleMenu}
-            aria-label="Меню навигации"
+            className="md:hidden p-2 rounded-md"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Меню"
           >
-            {isMenuOpen ? (
-              <X className="h-6 w-6 text-foreground" />
+            {isMobileMenuOpen ? (
+              <X size={24} className="text-gray-700 dark:text-gray-200" />
             ) : (
-              <Menu className="h-6 w-6 text-foreground" />
+              <Menu size={24} className="text-gray-700 dark:text-gray-200" />
             )}
           </button>
         </div>
 
         {/* Mobile Menu */}
-        {isMenuOpen && (
-          <div className="animate-fade-in md:hidden">
-            <nav className="flex flex-col space-y-4 border-t py-6">
+        {isMobileMenuOpen && (
+          <div className="md:hidden animate-fade-in py-4 border-t border-gray-200 dark:border-gray-700">
+            <nav className="flex flex-col space-y-4">
               <button 
-                onClick={() => scrollToSection("services")} 
-                className="py-2 text-foreground/80 hover:text-electric-600"
+                onClick={() => scrollToSection("services")}
+                className="text-base py-2 font-medium text-gray-700 hover:text-primary transition-colors dark:text-gray-200"
               >
                 Услуги
               </button>
               <button 
-                onClick={() => scrollToSection("benefits")} 
-                className="py-2 text-foreground/80 hover:text-electric-600"
+                onClick={() => scrollToSection("about")}
+                className="text-base py-2 font-medium text-gray-700 hover:text-primary transition-colors dark:text-gray-200"
               >
-                Преимущества
+                О нас
               </button>
               <button 
-                onClick={() => scrollToSection("contact-form")} 
-                className="py-2 text-foreground/80 hover:text-electric-600"
+                onClick={() => scrollToSection("work")}
+                className="text-base py-2 font-medium text-gray-700 hover:text-primary transition-colors dark:text-gray-200"
+              >
+                Наши работы
+              </button>
+              <button 
+                onClick={() => scrollToSection("contact")}
+                className="text-base py-2 font-medium text-gray-700 hover:text-primary transition-colors dark:text-gray-200"
               >
                 Контакты
               </button>
-              <div className="flex items-center space-x-2 pt-2">
-                <Phone size={18} className="text-electric-600" />
-                <span className="font-medium">+7 923 456 7890</span>
+              <div className="flex items-center gap-2 py-2 text-gray-700 dark:text-gray-200">
+                <Phone size={18} className="text-primary" />
+                <span className="font-medium">+7 800 555 3535</span>
               </div>
               <Button 
-                variant="default" 
-                className="mt-2 w-full"
-                onClick={() => scrollToSection("contact-form")}
+                onClick={() => scrollToSection("contact")}
+                className="w-full bg-primary hover:bg-primary/90 text-white"
               >
-                Оставить заявку
+                Заказать звонок
               </Button>
             </nav>
           </div>
@@ -134,6 +142,4 @@ const Header = () => {
       </div>
     </header>
   );
-};
-
-export default Header;
+}
