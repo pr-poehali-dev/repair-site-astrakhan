@@ -1,101 +1,107 @@
-
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Zap, Lightbulb, HomeIcon, Plug, Wrench, Cable } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
-export default function Services() {
+const Services = () => {
   const services = [
     {
-      icon: <Cable />,
-      title: "Электропроводка",
-      description: "Полная замена или прокладка новой электропроводки в жилых и коммерческих помещениях.",
-      link: "#contact"
+      title: "Монтаж электропроводки",
+      description: "Полная замена или установка новой электропроводки в квартирах, домах и офисах с соблюдением всех норм и стандартов.",
+      image: "https://images.unsplash.com/photo-1555963966-b7ae5404f4ed?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
     },
     {
-      icon: <Zap />,
-      title: "Монтаж щитов",
-      description: "Установка и подключение распределительных щитов, сборка по индивидуальным проектам.",
-      link: "#contact"
+      title: "Установка электрощитов",
+      description: "Монтаж, замена и обслуживание вводных и распределительных щитов с установкой всей необходимой защитной аппаратуры.",
+      image: "https://images.unsplash.com/photo-1631058587148-478db41a828a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
     },
     {
-      icon: <Lightbulb />,
-      title: "Системы освещения",
-      description: "Монтаж внутреннего и наружного освещения, декоративная подсветка, умное освещение.",
-      link: "#contact"
+      title: "Монтаж освещения",
+      description: "Разработка и реализация систем освещения любой сложности: от базовой до декоративной и архитектурной подсветки.",
+      image: "https://images.unsplash.com/photo-1565538420870-da08ff96a207?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
     },
     {
-      icon: <Plug />,
-      title: "Розетки и выключатели",
-      description: "Установка и замена розеток, выключателей, диммеров и других электроточек.",
-      link: "#contact"
+      title: "Установка розеток и выключателей",
+      description: "Замена старых и установка новых электрических точек с возможностью переноса и добавления дополнительных розеток.",
+      image: "https://images.unsplash.com/photo-1558346547-4439467bd1d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
     },
     {
-      icon: <HomeIcon />,
       title: "Умный дом",
-      description: "Проектирование и монтаж систем умного дома с удаленным управлением.",
-      link: "#contact"
+      description: "Проектирование и монтаж систем умного дома с возможностью удаленного управления всеми электрическими приборами.",
+      image: "https://images.unsplash.com/photo-1558002038-1055e2dae2c7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
     },
     {
-      icon: <Wrench />,
-      title: "Срочный ремонт",
-      description: "Оперативный выезд для устранения неисправностей в электропроводке.",
-      link: "#contact"
+      title: "Аварийные вызовы",
+      description: "Экстренный выезд для устранения любых неисправностей в электропроводке, восстановление электроснабжения в короткие сроки.",
+      image: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80"
     }
   ];
 
+  const scrollToForm = () => {
+    const formElement = document.getElementById("contact-form");
+    if (formElement) {
+      formElement.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
-    <section id="services" className="section-padding bg-white dark:bg-gray-900">
+    <section id="services" className="section-padding">
       <div className="container-custom">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center rounded-full px-3 py-1 mb-4 text-sm font-medium bg-primary/10 text-primary">
-            <Zap size={16} className="mr-2" />
+        <div className="mb-16 text-center">
+          <span className="mb-4 inline-block rounded-full bg-electric-100 px-4 py-1.5 text-sm font-medium text-electric-800">
             Наши услуги
-          </div>
-          <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6">
-            Полный комплекс <span className="heading-gradient">электромонтажных</span> работ
+          </span>
+          <h2 className="gradient-heading mb-6 font-display text-3xl font-bold md:text-4xl lg:text-5xl">
+            Полный спектр электромонтажных работ
           </h2>
-          <p className="text-lg text-gray-600 dark:text-gray-300">
-            Предоставляем широкий спектр услуг по электромонтажу с гарантией качества.
-            От простой замены розетки до полной электрификации дома.
+          <p className="mx-auto max-w-2xl text-center text-lg text-muted-foreground">
+            Предоставляем широкий выбор профессиональных электромонтажных услуг 
+            для жилых и коммерческих объектов. Гарантируем качество и безопасность.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service, index) => (
             <div 
-              key={index}
-              className="service-card p-6 animate-fade-in"
-              style={{ animationDelay: `${index * 100}ms` }}
+              key={index} 
+              className="service-card group h-96 animate-fade-in rounded-2xl bg-white shadow-lg dark:bg-card"
+              style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="service-icon inline-flex mb-4">
-                {service.icon}
+              <img 
+                src={service.image} 
+                alt={service.title} 
+                className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
+              />
+              <div className="absolute inset-x-0 bottom-0 z-10 p-6 text-white">
+                <h3 className="mb-2 font-display text-xl font-bold">{service.title}</h3>
+                <p className="mb-4 text-sm text-white/90">{service.description}</p>
+                <div className="transform opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+                  <Button 
+                    size="sm" 
+                    variant="default" 
+                    className="mt-2 bg-electric-500 hover:bg-electric-600"
+                    onClick={scrollToForm}
+                  >
+                    Заказать
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </div>
               </div>
-              <h3 className="text-xl font-heading font-semibold mb-3">
-                {service.title}
-              </h3>
-              <p className="text-gray-600 mb-4 dark:text-gray-300">
-                {service.description}
-              </p>
-              <a 
-                href={service.link}
-                className="inline-flex items-center text-primary font-medium hover:underline"
-              >
-                Подробнее
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </a>
             </div>
           ))}
         </div>
-
+        
         <div className="mt-16 text-center">
           <Button 
-            className="bg-primary hover:bg-primary/90 text-white"
-            onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
-            size="lg"
+            size="lg" 
+            onClick={scrollToForm}
+            className="bg-electric-500 text-white hover:bg-electric-600"
           >
             Получить консультацию
+            <ArrowRight className="ml-2 h-4 w-4" />
           </Button>
         </div>
       </div>
     </section>
   );
-}
+};
+
+export default Services;

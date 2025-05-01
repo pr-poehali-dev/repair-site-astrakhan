@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -53,15 +52,30 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        // Custom theme colors
+        electric: {
+          50: "#f0fbff",
+          100: "#e0f7fe",
+          200: "#baeffe",
+          300: "#7ce3fd",
+          400: "#37cff8",
+          500: "#0cb7e9",
+          600: "#0092c7",
+          700: "#0074a1",
+          800: "#006185",
+          900: "#08516f",
+          950: "#05344a",
+        },
+      },
+      fontFamily: {
+        sans: ["Poppins", "sans-serif"],
+        display: ["Space Grotesk", "sans-serif"],
+        mono: ["Roboto Mono", "monospace"],
       },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
-      },
-      fontFamily: {
-        sans: ["Inter", "sans-serif"],
-        heading: ["Montserrat", "sans-serif"],
       },
       keyframes: {
         "accordion-down": {
@@ -72,23 +86,30 @@ export default {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        "fade-in": {
+          "0%": { opacity: "0", transform: "translateY(10px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+        "fade-out": {
+          "0%": { opacity: "1", transform: "translateY(0)" },
+          "100%": { opacity: "0", transform: "translateY(10px)" },
+        },
         "pulse-slow": {
           "0%, 100%": { opacity: "1" },
           "50%": { opacity: "0.8" },
         },
-        "fade-in": {
-          "0%": { opacity: "0", transform: "translateY(20px)" },
-          "100%": { opacity: "1", transform: "translateY(0)" },
+        "float": {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-10px)" },
         },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        "pulse-slow": "pulse-slow 3s infinite",
-        "fade-in": "fade-in 0.5s ease-out forwards",
-      },
-      boxShadow: {
-        highlight: "inset 0 1px 0 0 rgba(255, 255, 255, 0.1)",
+        "fade-in": "fade-in 0.5s ease-out",
+        "fade-out": "fade-out 0.5s ease-out",
+        "pulse-slow": "pulse-slow 3s ease-in-out infinite",
+        "float": "float 6s ease-in-out infinite",
       },
     },
   },
